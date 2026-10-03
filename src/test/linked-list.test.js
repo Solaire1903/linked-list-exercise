@@ -71,7 +71,7 @@ describe("Linked List Tests", () => {
     expect(linkedList.tailNode()).toBe(5);
   });
 
-  test.skip("Get Node at index", () => {
+  test("Get Node at index", () => {
     const linkedList = new LinkedList();
     linkedList.append(3);
     linkedList.append(5);
