@@ -148,6 +148,25 @@ class LinkedList {
 
     return false;
   }
+
+  /**
+   * Finds the index of the first node with the given value
+   * @param {*} value The value to search the index for
+   * @returns The index of the node with the given value, or -1 if there is no such node
+   */
+  findIndex(value) {
+    let currentNode = this.head;
+    let index = 0;
+
+    while (currentNode !== null) {
+      if (currentNode.value === value) return index;
+
+      currentNode = currentNode.nextNode;
+      index++;
+    }
+
+    return -1;
+  }
 }
 
 export { LinkedList, Node };

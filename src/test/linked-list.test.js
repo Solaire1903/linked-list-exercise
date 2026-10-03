@@ -105,7 +105,7 @@ describe("Linked List Tests", () => {
     expect(linkedList.contains(7)).toBe(false);
   });
 
-  test.skip("Find index of Node with the given value", () => {
+  test("Find index of Node with the given value", () => {
     const linkedList = new LinkedList();
     linkedList.append(3);
     linkedList.append(5);
