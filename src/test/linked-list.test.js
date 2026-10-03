@@ -71,7 +71,7 @@ describe("Linked List Tests", () => {
     expect(linkedList.tailNode()).toBe(5);
   });
 
-  test("Get Node at index", () => {
+  test("Get Node value at index", () => {
     const linkedList = new LinkedList();
     linkedList.append(3);
     linkedList.append(5);
@@ -125,5 +125,31 @@ describe("Linked List Tests", () => {
     linkedList.append(5);
     linkedList.append(7);
     expect(linkedList.toString()).toBe("( 3 ) -> ( 5 ) -> ( 7 ) -> null");
+  });
+
+  test("Insert Nodes at given index", () => {
+    const linkedList = new LinkedList();
+    linkedList.append(3);
+    linkedList.append(4);
+    linkedList.append(7);
+
+    linkedList.insertAt(0, 1);
+    expect(linkedList.at(0)).toBe(1);
+
+    linkedList.insertAt(1, 2);
+    expect(linkedList.at(1)).toBe(2);
+
+    linkedList.insertAt(4, 5, 6);
+    expect(linkedList.at(4)).toBe(5);
+    expect(linkedList.at(5)).toBe(6);
+
+    linkedList.insertAt(7, 8, 9, 10);
+    expect(linkedList.at(7)).toBe(8);
+    expect(linkedList.at(8)).toBe(9);
+    expect(linkedList.at(9)).toBe(10);
+
+    expect(linkedList.toString).toBe(
+      "( 1 ) -> ( 2 ) -> ( 3 ) -> ( 4 ) -> ( 5 ) -> ( 6 ) -> ( 7 ) -> ( 8 ) -> ( 9 ) -> ( 10 ) -> null",
+    );
   });
 });
