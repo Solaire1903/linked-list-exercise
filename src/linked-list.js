@@ -189,6 +189,52 @@ class LinkedList {
 
     return listString;
   }
+
+  /**
+   * Inserts the given values into the Linked List at the given index
+   * @param {number} insertIndex The index to insert the values at
+   * @param  {...any} values The values to insert
+   */
+  insertAt(insertIndex, ...values) {
+    //Check for invalid index
+    if (insertIndex < 0 || insertIndex > this.size())
+      throw new RangeError("Invalid Index");
+
+    //Create sub-list with values from the given value array
+    const subList = new LinkedList();
+
+    values.forEach((value) => {
+      subList.append(value);
+    });
+
+    let currentSubListNode = subList.head;
+
+    while (currentSubListNode.nextNode !== null) {
+      currentSubListNode = currentSubListNode.nextNode;
+    }
+
+    const lastSubListNode = currentSubListNode;
+
+    //Prepend sub-list at the beginning of the current list
+    if (insertIndex === 0) {
+      lastSubListNode.nextNode = this.head;
+      this.head = subList.head;
+      return;
+    }
+
+    let currentNode = this.head;
+    let index = 1;
+
+    //Find Node, after which the sub-list will be inserted
+    while (index < insertIndex) {
+      currentNode = currentNode.nextNode;
+      index++;
+    }
+
+    //Insert sub-list into the current list
+    lastSubListNode.nextNode = currentNode.nextNode;
+    currentNode.nextNode = subList.head;
+  }
 }
 
 export { LinkedList, Node };

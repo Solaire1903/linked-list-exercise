@@ -148,8 +148,11 @@ describe("Linked List Tests", () => {
     expect(linkedList.at(8)).toBe(9);
     expect(linkedList.at(9)).toBe(10);
 
-    expect(linkedList.toString).toBe(
+    expect(linkedList.toString()).toBe(
       "( 1 ) -> ( 2 ) -> ( 3 ) -> ( 4 ) -> ( 5 ) -> ( 6 ) -> ( 7 ) -> ( 8 ) -> ( 9 ) -> ( 10 ) -> null",
     );
+
+    expect(() => linkedList.insertAt(-1, 2, 3)).toThrow(RangeError);
+    expect(() => linkedList.insertAt(50, 2, 3)).toThrow(RangeError);
   });
 });
