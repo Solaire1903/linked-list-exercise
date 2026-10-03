@@ -131,6 +131,23 @@ class LinkedList {
 
     return headValue;
   }
+
+  /**
+   * Checks, if a given value is in the list
+   * @param {*} value The value to search for
+   * @returns True, if the value is in the list, false otherwise
+   */
+  contains(value) {
+    let currentNode = this.head;
+
+    while (currentNode !== null) {
+      if (currentNode.value === value) return true;
+
+      currentNode = currentNode.nextNode;
+    }
+
+    return false;
+  }
 }
 
 export { LinkedList, Node };

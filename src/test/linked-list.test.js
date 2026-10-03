@@ -96,7 +96,7 @@ describe("Linked List Tests", () => {
     expect(linkedList.head).toBe(null);
   });
 
-  test.skip("Search, if given value is in the List", () => {
+  test("Search, if given value is in the List", () => {
     const linkedList = new LinkedList();
     linkedList.append(3);
     linkedList.append(5);
