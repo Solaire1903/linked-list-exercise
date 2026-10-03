@@ -67,7 +67,17 @@ class LinkedList {
     return size;
   }
 
-  
+  /**
+   * Gets the first node (head node) in the list
+   * @returns The head node of the list
+   */
+  headNode() {
+    if (this.head === null) {
+      return undefined;
+    }
+
+    return this.head.value;
+  }
 }
 
 export { LinkedList, Node };
