@@ -209,6 +209,7 @@ class LinkedList {
 
     let currentSubListNode = subList.head;
 
+    //Find last Nodeof the sub-list
     while (currentSubListNode.nextNode !== null) {
       currentSubListNode = currentSubListNode.nextNode;
     }
