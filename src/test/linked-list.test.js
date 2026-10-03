@@ -117,7 +117,7 @@ describe("Linked List Tests", () => {
     expect(linkedList.findIndex(9)).toBe(-1);
   });
 
-  test.skip("Represent List as a string", () => {
+  test("Represent the List as a string", () => {
     const linkedList = new LinkedList();
     expect(linkedList.toString()).toBe("");
 

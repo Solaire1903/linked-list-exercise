@@ -167,6 +167,28 @@ class LinkedList {
 
     return -1;
   }
+
+  /**
+   * Represents the list as a string
+   * @returns A string representing the list
+   */
+  toString() {
+    if (this.head === null) {
+      return "";
+    }
+
+    let listString = `( ${this.head.value} ) ->`;
+    let currentNode = this.head.nextNode;
+
+    while (currentNode !== null) {
+      listString = listString.concat(" ", `( ${currentNode.value} ) ->`);
+      currentNode = currentNode.nextNode;
+    }
+
+    listString = listString.concat(" ", "null");
+
+    return listString;
+  }
 }
 
 export { LinkedList, Node };
