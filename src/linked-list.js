@@ -35,6 +35,10 @@ class LinkedList {
     currentNode.nextNode = new Node(value);
   }
 
+  /**
+   * Adds a new Node with the given value to the head of the list
+   * @param {*} value 
+   */
   prepend(value) {
     if (this.head === null) {
       this.head = new Node(value);
