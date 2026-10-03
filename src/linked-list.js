@@ -97,18 +97,39 @@ class LinkedList {
     return currentNode.value;
   }
 
+  /**
+   * Returns the value of the node at a given index
+   * @param {number} searchIndex The index of the node to find the value of
+   * @returns The value of the node at the given index
+   */
   at(searchIndex) {
     let currentNode = this.head;
     let currentIndex = 0;
 
     while (currentNode !== null) {
       if (currentIndex === searchIndex) return currentNode.value;
-      
+
       currentNode = currentNode.nextNode;
       currentIndex++;
     }
 
     return undefined;
+  }
+
+  /**
+   * Removes the head node from the list and returns its value
+   * @returns The value of the head node
+   */
+  pop() {
+    if (this.head === null) {
+      return undefined;
+    }
+
+    let headValue = this.head.value;
+
+    this.head = this.head.nextNode;
+
+    return headValue;
   }
 }
 

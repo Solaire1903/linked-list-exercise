@@ -83,7 +83,7 @@ describe("Linked List Tests", () => {
     expect(linkedList.at(6)).toBe(undefined);
   });
 
-  test.skip("Pop first Node from the List", () => {
+  test("Pop first Node from the List", () => {
     const linkedList = new LinkedList();
     expect(linkedList.pop()).toBe(undefined);
 
@@ -91,6 +91,9 @@ describe("Linked List Tests", () => {
     linkedList.append(5);
     expect(linkedList.pop()).toBe(3);
     expect(linkedList.head.value).toBe(5);
+
+    expect(linkedList.pop()).toBe(5);
+    expect(linkedList.head).toBe(null);
   });
 
   test.skip("Search, if given value is in the List", () => {
