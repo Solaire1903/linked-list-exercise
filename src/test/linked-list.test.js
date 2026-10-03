@@ -26,4 +26,20 @@ describe("Linked List Tests", () => {
     linkedList.append(7);
     expect(linkedList.head.nextNode.nextNode.value).toBe(7);
   });
+
+  test("Prepend Node", () => {
+    const linkedList = new LinkedList();
+
+    linkedList.prepend(3);
+    expect(linkedList.head.value).toBe(3);
+
+    linkedList.prepend(5);
+    expect(linkedList.head.value).toBe(5);
+    expect(linkedList.head.nextNode.value).toBe(3);
+
+    linkedList.prepend(7);
+    expect(linkedList.head.value).toBe(7);
+    expect(linkedList.head.nextNode.value).toBe(5);
+    expect(linkedList.head.nextNode.nextNode.value).toBe(3);
+  })
 });

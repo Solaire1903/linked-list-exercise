@@ -34,6 +34,18 @@ class LinkedList {
 
     currentNode.nextNode = new Node(value);
   }
+
+  prepend(value) {
+    if (this.head === null) {
+      this.head = new Node(value);
+      return;
+    }
+
+    const newHead = new Node(value);
+
+    newHead.nextNode = this.head;
+    this.head = newHead;
+  }
 }
 
 export { LinkedList, Node };
