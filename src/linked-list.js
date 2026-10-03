@@ -68,7 +68,7 @@ class LinkedList {
   }
 
   /**
-   * Gets the first node (head node) in the list
+   * Gets the first node (head node) of the list
    * @returns The head node of the list
    */
   headNode() {
@@ -77,6 +77,24 @@ class LinkedList {
     }
 
     return this.head.value;
+  }
+
+  /**
+   * Gets the last node (tail node) of the list
+   * @returns The tail node of the list
+   */
+  tailNode() {
+    if (this.head === null) {
+      return undefined;
+    }
+
+    let currentNode = this.head;
+
+    while (currentNode.nextNode !== null) {
+      currentNode = currentNode.nextNode;
+    }
+
+    return currentNode.value;
   }
 }
 

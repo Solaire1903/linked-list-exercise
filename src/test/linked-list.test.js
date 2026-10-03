@@ -62,7 +62,7 @@ describe("Linked List Tests", () => {
     expect(linkedList.headNode()).toBe(3);
   });
 
-  test.skip("Get last Node in the List", () => {
+  test("Get last Node in the List", () => {
     const linkedList = new LinkedList();
     expect(linkedList.tailNode()).toBe(undefined);
 
