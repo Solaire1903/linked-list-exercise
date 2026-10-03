@@ -1,3 +1,1 @@
-# node-template
-
-Template for Node.js based projects that don't have a GUI
+Implementation of a Linked List with some functions. Part of The Odin Project
