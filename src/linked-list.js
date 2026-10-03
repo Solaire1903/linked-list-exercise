@@ -37,7 +37,7 @@ class LinkedList {
 
   /**
    * Adds a new Node with the given value to the head of the list
-   * @param {*} value 
+   * @param {*} value
    */
   prepend(value) {
     if (this.head === null) {
@@ -50,6 +50,24 @@ class LinkedList {
     newHead.nextNode = this.head;
     this.head = newHead;
   }
+
+  /**
+   * Gets the size of the list
+   * @returns The list size
+   */
+  size() {
+    let currentNode = this.head;
+    let size = 0;
+
+    while (currentNode !== null) {
+      size++;
+      currentNode = currentNode.nextNode;
+    }
+
+    return size;
+  }
+
+  
 }
 
 export { LinkedList, Node };
