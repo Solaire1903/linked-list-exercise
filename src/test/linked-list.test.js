@@ -162,8 +162,8 @@ describe("Linked List Tests", () => {
     linkedList.append(4);
     linkedList.append(7);
 
-    expect(linkedList.removeAt(-1)).toThrow(RangeError);
-    expect(linkedList.removeAt(3)).toThrow(RangeError);
+    expect(() => linkedList.removeAt(-1)).toThrow(RangeError);
+    expect(() => linkedList.removeAt(3)).toThrow(RangeError);
 
     linkedList.removeAt(1);
     expect(linkedList.at(1)).toBe(7);
