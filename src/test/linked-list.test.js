@@ -133,6 +133,9 @@ describe("Linked List Tests", () => {
     linkedList.append(4);
     linkedList.append(7);
 
+    expect(() => linkedList.insertAt(-1, 2, 3)).toThrow(RangeError);
+    expect(() => linkedList.insertAt(4, 2, 3)).toThrow(RangeError);
+
     linkedList.insertAt(0, 1);
     expect(linkedList.at(0)).toBe(1);
 
@@ -151,8 +154,27 @@ describe("Linked List Tests", () => {
     expect(linkedList.toString()).toBe(
       "( 1 ) -> ( 2 ) -> ( 3 ) -> ( 4 ) -> ( 5 ) -> ( 6 ) -> ( 7 ) -> ( 8 ) -> ( 9 ) -> ( 10 ) -> null",
     );
+  });
 
-    expect(() => linkedList.insertAt(-1, 2, 3)).toThrow(RangeError);
-    expect(() => linkedList.insertAt(50, 2, 3)).toThrow(RangeError);
+  test("Remove Node at a given index", () => {
+    const linkedList = new LinkedList();
+    linkedList.append(3);
+    linkedList.append(4);
+    linkedList.append(7);
+
+    expect(linkedList.removeAt(-1)).toThrow(RangeError);
+    expect(linkedList.removeAt(3)).toThrow(RangeError);
+
+    linkedList.removeAt(1);
+    expect(linkedList.at(1)).toBe(7);
+    expect(linkedList.size()).toBe(2);
+
+    linkedList.removeAt(1);
+    expect(linkedList.at(1)).toBe(undefined);
+    expect(linkedList.size()).toBe(1);
+
+    linkedList.removeAt(0);
+    expect(linkedList.at(0)).toBe(undefined);
+    expect(linkedList.size()).toBe(0);
   });
 });
