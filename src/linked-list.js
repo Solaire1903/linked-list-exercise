@@ -236,6 +236,37 @@ class LinkedList {
     lastSubListNode.nextNode = currentNode.nextNode;
     currentNode.nextNode = subList.head;
   }
+
+  /**
+   * Removes the Node at a given index
+   * @param {number} removeIndex The index of the Node to remove
+   */
+  removeAt(removeIndex) {
+    if (removeIndex < 0 || removeIndex >= this.size())
+      throw new RangeError("Invalid Index");
+
+    if (removeIndex === 0) {
+      this.head = this.head.nextNode;
+      return;
+    }
+
+    let currentNode = this.head;
+    let index = 1;
+
+    //Find the Node that comes before the Node to be removed
+    while (index < removeIndex) {
+      currentNode = currentNode.nextNode;
+      index++;
+    }
+
+    //If Node to be removed is the last Node of the list
+    if (currentNode.nextNode.nextNode === null) {
+      currentNode.nextNode = null;
+      return;
+    }
+
+    currentNode.nextNode = currentNode.nextNode.nextNode;
+  }
 }
 
 export { LinkedList, Node };
